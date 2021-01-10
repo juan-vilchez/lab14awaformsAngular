@@ -9,20 +9,13 @@ import { logging } from 'protractor';
 })
 export class AppComponent implements OnInit {
   title = 'angular13';
-  //angForm:any;
-
-
 private isValidEmail: any = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 private passwordFormat:any= /^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{8,20}$/;
   
-
 angForm: FormGroup;
   constructor(private fb: FormBuilder){
     this.createForm();
-  }
-
-  
-  
+  } 
 
   createForm(){
     this.angForm = this.fb.group({
@@ -38,11 +31,6 @@ angForm: FormGroup;
    
     });
   }
-  
-  
-
-
-
   onClickSubmit(email, pwd){
     //alert('Tu email es: '+ email);
 
@@ -102,20 +90,6 @@ angForm: FormGroup;
     return message;
   }
   
- /*  getErrorMessagePasswordFormatValid(field: string){
-    let message;
-    if(this.angForm.get(field)?.errors?.required){
-      message="El campo es requerido";
-    }else if(this.angForm.get(field)?.hasError('minlength')){
-      message="Debe contener por lo menos 8 caracteres";
-    }else if(this.angForm.get(field)?.hasError('maxlength')){
-      message="Debe contener como maximo 20 caracteres";
-    }else if(this.angForm.get(field)?.hasError('pattern')){
-      message="Ingrese una contraseña válida";
-    }
-    return message;
-  } */
-
   getErrorMessageDia(field: string){
     let message;
     if(this.angForm.get(field)?.errors?.required){
@@ -153,12 +127,6 @@ angForm: FormGroup;
     );
   }
 
-
-  
-  get email(){return this.angForm.get('email');}
-  get pwd(){return this.angForm.get('pwd');}
-  get pwdv(){return this.angForm.get('pwdv');}
-
   getErrorMessagePasswordFormatValid(field:string){
     let message;
     if(this.angForm.get(field)?.errors?.required){
@@ -174,17 +142,6 @@ angForm: FormGroup;
     }
     return message;
   }
-  /* getErrorMessagePasswordFormatValid(valor: string) {
-    let valor1 = this.angForm.get('pwd');
-
-    if( valor === valor1?.value) {
-        console.log('Los valores son iguales');
-    } else {
-        console.log('los valores no son iguales');
-    }
-} */
-
-  //get name(){return this.angForm.get('');}
-
+  
 }
 
