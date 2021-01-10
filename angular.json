@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "angular13"
+  "defaultProject": "angular13",
+  "cli": {
+    "analytics": false
+  }
 }
